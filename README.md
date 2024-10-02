@@ -30,3 +30,12 @@ sudo setcap cap_net_raw+eip $(which python3)
 ```
 
 ## Send package
+
+### Using nc to send payload(s)
+
+```bash
+printf '\x00%.0s' {1..99} > payload.bin && printf '\x01' >> payload.bin
+
+nc 127.0.0.1 4404 < payload.bin
+```
+
