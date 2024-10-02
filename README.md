@@ -39,3 +39,9 @@ printf '\x00%.0s' {1..99} > payload.bin && printf '\x01' >> payload.bin
 nc 127.0.0.1 4404 < payload.bin
 ```
 
+## Build static binary
+
+```bash
+CGO_ENABLED=0 GOOS=linux go build -a -o nokku
+```
+
